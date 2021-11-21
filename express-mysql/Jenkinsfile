@@ -27,7 +27,7 @@ pipeline {
           // First stage is a sample hello-world step to verify correct Jenkins Pipeline
           echo 'Hello World, I am Happy'
           echo 'This is my amazing Pipeline'
-          echo 'whoami'
+          whoami
         }
       }
       stage('Checkout') {
