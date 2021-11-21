@@ -67,13 +67,13 @@ pipeline {
             }
           }
       }
-      stage("Quality Gate"){
-        steps {
-          timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-            waitForQualityGate abortPipeline: true
-          }
-        }
-      }
+      // stage("Quality Gate"){
+      //   steps {
+      //     timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
+      //       waitForQualityGate abortPipeline: true
+      //     }
+      //   }
+      // }
       stage('Build docker-image') {
         steps {
           sh "cd ./${PROJECT_ROOT};docker build -t ${REGISTRY}:${BUILD_NUMBER} . "
