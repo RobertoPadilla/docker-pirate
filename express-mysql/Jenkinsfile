@@ -28,6 +28,7 @@ pipeline {
           echo 'Hello World, I am Happy'
           echo 'This is my amazing Pipeline'
           sh 'su jenkins'
+          sh 'whoami'
         }
       }
       stage('Checkout') {
